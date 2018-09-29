@@ -19,6 +19,6 @@ export class MyComponent {
   }
 
   render() {
-    return <div>testing git Hello, World! I'm {this.format()}</div>;
+    return <div>testing Hello, World! I'm {this.format()}</div>;
   }
 }
