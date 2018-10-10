@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'xeph-autocomplete',
@@ -6,7 +6,9 @@ import { Component } from '@stencil/core';
 })
 export class XephAutoComplete {
 
+  @Prop() placeholder: string;
+
   render() {
-    return <input type="text"/>;
+    return <input type="text" placeholder={this.placeholder}/>;
   }
 }

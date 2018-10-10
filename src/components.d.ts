@@ -12,8 +12,12 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface XephAutocomplete {}
-  interface XephAutocompleteAttributes extends StencilHTMLAttributes {}
+  interface XephAutocomplete {
+    'placeholder': string;
+  }
+  interface XephAutocompleteAttributes extends StencilHTMLAttributes {
+    'placeholder'?: string;
+  }
 }
 
 declare global {
