@@ -12,40 +12,32 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
-    'first': string;
-    'last': string;
-    'middle': string;
-  }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    'first'?: string;
-    'last'?: string;
-    'middle'?: string;
-  }
+  interface XephAutocomplete {}
+  interface XephAutocompleteAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'XephAutocomplete': Components.XephAutocomplete;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'xeph-autocomplete': Components.XephAutocompleteAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLXephAutocompleteElement extends Components.XephAutocomplete, HTMLStencilElement {}
+  var HTMLXephAutocompleteElement: {
+    prototype: HTMLXephAutocompleteElement;
+    new (): HTMLXephAutocompleteElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'xeph-autocomplete': HTMLXephAutocompleteElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'xeph-autocomplete': HTMLXephAutocompleteElement;
   }
 
 
