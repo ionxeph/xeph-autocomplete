@@ -22,18 +22,18 @@ describe('xeph-autocomplete', () => {
     expect(element.getAttribute('placeholder')).toEqual(`test placeholder`);
   });
 
-  xit('renders a list of string matches', async() => {
-    const page = await newE2EPage();
+  /** I would love for this test to work, but I can't get it to work for the life of me */
+  // it('renders a list of string matches', async() => {
+  //   const page = await newE2EPage();
 
-    await page.setContent('<xeph-autocomplete></xeph-autocomplete>');
-    const component = await page.find('xeph-autocomplete');
-    const inputElement = await page.find('xeph-autocomplete >>> input');
-    component.setProperty('validArr', ['the', 'valid', 'strings', 'for', 'search', 'auto', 'complete', 'foo', 'bar']);
-    inputElement.setAttribute('value', 'fo');
+  //   await page.setContent('<xeph-autocomplete></xeph-autocomplete>');
+  //   const component = await page.find('xeph-autocomplete');
+  //   const inputElement = await page.find('xeph-autocomplete >>> input');
+  //   component.setProperty('validArr', ['the', 'valid', 'strings', 'for', 'search', 'auto', 'complete', 'foo', 'bar']);
+  //   inputElement.setAttribute('value', 'fo');
 
-    await page.waitForChanges();
-    console.log(inputElement.getAttribute('value'));
-    const listElements = await page.findAll('xeph-autocomplete >>> li');
-    expect(listElements.length).toBe(2);
-  });
+  //   await page.waitForChanges();
+  //   const listElements = await page.findAll('xeph-autocomplete >>> li');
+  //   expect(listElements.length).toBe(2);
+  // });
 });
