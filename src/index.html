@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/xeph-autocomplete.js"></script>
-
+  
 </head>
 <body>
 
-  <xeph-autocomplete placeholder="placeholder"></xeph-autocomplete>
+  <xeph-autocomplete id="autocomplete" placeholder="placeholder"></xeph-autocomplete>
 
+  <script>
+    var testArr = ['the', 'valid', 'strings', 'for', 'search', 'auto', 'complete', 'foo', 'bar'];
+    document.querySelector('xeph-autocomplete').validarr = testArr;
+  </script>
 </body>
 </html>
