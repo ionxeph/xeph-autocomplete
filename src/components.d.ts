@@ -14,11 +14,11 @@ export namespace Components {
 
   interface XephAutocomplete {
     'placeholder': string;
-    'validarr': string[];
+    'suggestionlist': string[];
   }
   interface XephAutocompleteAttributes extends StencilHTMLAttributes {
     'placeholder'?: string;
-    'validarr'?: string[];
+    'suggestionlist'?: string[];
   }
 }
 

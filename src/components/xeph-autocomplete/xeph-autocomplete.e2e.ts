@@ -14,8 +14,8 @@ describe('xeph-autocomplete', () => {
 
     await page.setContent('<xeph-autocomplete></xeph-autocomplete>');
     const component = await page.find('xeph-autocomplete');
-    const element = await page.find('xeph-autocomplete >>> input');
-    expect(element.getAttribute('placeholder')).toBeNull();
+    const element = await page.find('input');
+    expect(element.getAttribute('placeholder')).toBe('');
 
     component.setProperty('placeholder', 'test placeholder');
     await page.waitForChanges();
@@ -27,7 +27,7 @@ describe('xeph-autocomplete', () => {
 
     await page.setContent('<xeph-autocomplete></xeph-autocomplete>');
     const component = await page.find('xeph-autocomplete');
-    const element = await page.find('xeph-autocomplete >>> ul');
+    const element = await page.find('ul');
     expect(element.getAttribute('hidden')).toBe('');
 
     component.setProperty('showSuggestions', true);
@@ -42,8 +42,9 @@ describe('xeph-autocomplete', () => {
   //   await page.setContent('<xeph-autocomplete></xeph-autocomplete>');
   //   const component = await page.find('xeph-autocomplete');
   //   const inputElement = await page.find('xeph-autocomplete >>> input');
-  //   component.setProperty('validArr', ['the', 'valid', 'strings', 'for', 'search', 'auto', 'complete', 'foo', 'bar']);
-  //   inputElement.setProperty('value', 'fo');
+  //   component.setProperty('showSuggestions', true);
+  //   component.setProperty('validarr', ['the', 'valid', 'strings', 'for', 'search', 'auto', 'complete', 'foo', 'bar']);
+  //   component.setProperty('inputValue', 'fo');
 
   //   await page.waitForChanges();
   //   const listElements = await page.findAll('xeph-autocomplete >>> li');
