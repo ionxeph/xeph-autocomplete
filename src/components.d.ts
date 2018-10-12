@@ -13,11 +13,23 @@ import '@stencil/core';
 export namespace Components {
 
   interface XephAutocomplete {
+    /**
+    * Value for input placeholder
+    */
     'placeholder': string;
+    /**
+    * Values that the auto-complete textbox should search for
+    */
     'suggestionlist': string[];
   }
   interface XephAutocompleteAttributes extends StencilHTMLAttributes {
+    /**
+    * Value for input placeholder
+    */
     'placeholder'?: string;
+    /**
+    * Values that the auto-complete textbox should search for
+    */
     'suggestionlist'?: string[];
   }
 }

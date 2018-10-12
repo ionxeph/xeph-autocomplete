@@ -12,7 +12,10 @@ export class XephAutoComplete {
   @State() suggestionArr: string[] = [];
   @State() selectedSuggestionIndex: number;
 
+  /** Value for input placeholder */
   @Prop() placeholder: string = '';
+
+  /** Values that the auto-complete textbox should search for */
   @Prop() suggestionlist: string[] = [];
 
   @Watch('suggestionlist')
