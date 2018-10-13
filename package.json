@@ -1,6 +1,6 @@
 {
-  "name": "my-component",
-  "version": "0.0.1",
+  "name": "xeph-autocomplete",
+  "version": "1.0.0",
   "description": "Auto Complete text input built with Stencil",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -27,12 +27,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/andrew-cheng/xeph-autocomplete.git"
   },
-  "author": "Ionic Team",
+  "author": "Andrew Cheng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
-  },
-  "homepage": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/andrew-cheng/xeph-autocomplete"
+  }
 }

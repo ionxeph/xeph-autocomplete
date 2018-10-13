@@ -7,7 +7,7 @@ export class XephAutoComplete {
 
   @Element() element: HTMLElement;
 
-  @State() showSuggestions = false;
+  @State() showSuggestions: boolean;
   @State() inputValue = '';
   @State() suggestionArr: string[] = [];
   @State() selectedSuggestionIndex: number;
@@ -34,7 +34,7 @@ export class XephAutoComplete {
 
   @Listen('window:click') 
   handleWindowClick(e: Event) {
-    if ((e.target as HTMLElement) !== this.element) {
+    if (!this.element.contains((e.target as HTMLElement))) {
       this.showSuggestions = false;
       this.selectedSuggestionIndex = undefined;
     }
@@ -90,9 +90,7 @@ export class XephAutoComplete {
     if (e.key === 'Enter') {
       e.preventDefault();
       if (this.selectedSuggestionIndex !== undefined) {
-        this.inputValue = this.suggestionArr[this.selectedSuggestionIndex];
-        this.selectedSuggestionIndex = undefined;
-        this.showSuggestions = false;
+        this.onSelect(this.suggestionArr[this.selectedSuggestionIndex]);
       }
     }
   }
@@ -106,28 +104,33 @@ export class XephAutoComplete {
   getSuggestionElement = (suggestion): JSX.Element => {
     const isSelected = this.selectedSuggestionIndex !== undefined
       && suggestion === this.suggestionArr[this.selectedSuggestionIndex];
-    return (<li
-      class={'xeph-suggestion ' + (isSelected ? 'xeph-selected': '')}
-      onClick={() => this.onSelect(suggestion)}
-    >
-      {suggestion}
-    </li>);
+    return (
+      <li
+        class={'xeph-li ' + (isSelected ? 'xeph-selected': '')}
+        onClick={() => this.onSelect(suggestion)}
+      >
+        {suggestion}
+      </li>
+    );
   };
 
   render() {
-    return ([
-      <input
-        type="text"
-        placeholder={this.placeholder}
-        value={this.inputValue}
-        onInput={e => this.onInput(e)}
-        onFocus={() => this.onFocus()}
-        onKeyDown={e => this.onKeyDown(e)}
-        onKeyPress={e => this.onKeyPress(e)}
-      />,
-      <ul hidden={!this.showSuggestions}>
-        {this.suggestionArr.map(suggestion => this.getSuggestionElement(suggestion))}
-      </ul>
-    ]);
+    return (
+      <div class='xeph-div'>
+        <input
+          class='xeph-input'
+          type="text"
+          placeholder={this.placeholder}
+          value={this.inputValue}
+          onInput={e => this.onInput(e)}
+          onFocus={() => this.onFocus()}
+          onKeyDown={e => this.onKeyDown(e)}
+          onKeyPress={e => this.onKeyPress(e)}
+        />
+        <ul class='xeph-ul' role='listbox' hidden={!this.showSuggestions}>
+          {this.suggestionArr.map(suggestion => this.getSuggestionElement(suggestion))}
+        </ul>
+      </div>  
+    );
   }
 }

@@ -1,0 +1,28 @@
+.xeph-div {
+  position: relative;
+}
+
+.xeph-input {
+  width: 100%;
+}
+
+.xeph-ul {
+  list-style: none;
+  border: 1px lightblue solid;
+  background-color: white;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.xeph-li:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.xeph-selected {
+  background-color: blue;
+  color: white;
+}
